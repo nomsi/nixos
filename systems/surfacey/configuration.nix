@@ -102,6 +102,9 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  # Surface Stuff
+  microsoft-service.ipts.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -114,6 +117,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  config.microsoft-surface.surface-control.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.11"; # Did you read the comment?
 
