@@ -15,6 +15,7 @@
   home.packages = with pkgs; [
     winetricks
     xivlauncher
+    libreoffice
   ];
 
   # basic configuration of git, please change to your own
