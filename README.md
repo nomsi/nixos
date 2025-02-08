@@ -1,3 +1,6 @@
+
+
+
 ### Personal nix config
 Usually I upload to my private git but I should keep my nixos configuration adventure archived publicly.
 
