@@ -76,9 +76,11 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
-    
-    nerd-fonts.ubuntu-sans
   ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.ubuntu-sans
+  ]
 
   # Extra System stuff
   programs.firefox.enable = true;
