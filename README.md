@@ -1,5 +1,5 @@
 ### Personal nix config
-Usually I upload to my private git but I should keep my nixos configuration adventure archived.
+Usually I upload to my private git but I should keep my nixos configuration adventure archived publicly.
 
 Interesting tidbits:
 - System 1 (nixy):
@@ -11,9 +11,9 @@ Interesting tidbits:
 - System 3 (decky)
   - Steam Deck
   - ... *coming soon?*
-- System 4 (homelab)
+- System 4 (homelaby)
   - Home Server. Not yet built
-- System 5 (ovh server)
+- System 5 (servery)
   - Need time to migrate but will be adding it.
 
 This is my todo list now basically. Ignore the fact that it's all simplistic, and I have yet to make any overlays or anything yet.
