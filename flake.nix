@@ -31,12 +31,6 @@
           ./systems/surfacey/configuration.nix
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           {
-            system.extraSystemBuilderCmds = ''
-              ln -s ${self} $out/flake
-              ln -s ${self.nixosConfigurations.papyrus.config.boot.kernelPackages.kernel.dev} $out/kernel-dev
-            '';
-          }
-          {
             nix.registry.nixpkgs.flake = nixpkgs;
           }
           home-manager.nixosModules.home-manager
