@@ -30,7 +30,7 @@
   {
     enable = true;
     theme = spicePkgs.themes.catppuccin;
-  }
+  };
 
   home.stateVersion = "24.11";
 
