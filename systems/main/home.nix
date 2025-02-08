@@ -23,6 +23,15 @@
     userEmail = "me@emi.lgbt";
   };
 
+  programs.spicetify =
+  let
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  in
+  {
+    enable = true;
+    theme = spicePkgs.themes.catppuccin;
+  }
+
   home.stateVersion = "24.11";
 
   programs.home-manager.enable = true;
