@@ -62,6 +62,19 @@
   # Install firefox.
   programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
+    wineWowPackages.stable
+
+    yaru-theme
+    gnome-software
+    ubuntu-themes
+    gnome-tweaks
+
+    ubuntu-sans
+    noto-fonts
+    noto-fonts-extra
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    noto-fonts-color-emoji
   ];
 
   microsoft-service.ipts.enable = true;
