@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     winetricks
     spotify
+    libreoffice
   ];
 
   # basic configuration of git, please change to your own
