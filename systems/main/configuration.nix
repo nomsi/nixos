@@ -63,6 +63,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    wineWowPackages.stable
   ];
 
   # Extra System stuff
