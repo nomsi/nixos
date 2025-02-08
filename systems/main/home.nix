@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
     ./modules/bash.nix
     ./modules/code.nix
     ./modules/zip.nix
+
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   home.username = "emi";
