@@ -46,7 +46,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-.
+
   users.users.emi = {
     isNormalUser = true;
     description = "Emi Madison Jade-Steele";
