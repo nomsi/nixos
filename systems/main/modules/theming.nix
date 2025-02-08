@@ -7,4 +7,4 @@
     ubuntu-themes
     gnome-tweaks
   ];
-};
+}
