@@ -83,7 +83,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Garbage Collection
-  gc = {
+  nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 7d";

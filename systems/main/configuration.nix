@@ -96,7 +96,7 @@
   virtualisation.libvirtd.qemu.ovmf.enable = true;
 
   # Garbage Collection
-  gc = {
+  nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 7d";
