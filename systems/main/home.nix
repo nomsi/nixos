@@ -14,7 +14,6 @@
 
   home.packages = with pkgs; [
     winetricks
-    spotify
   ];
 
   # basic configuration of git, please change to your own
