@@ -3,8 +3,10 @@
   home.packages = with pkgs; [
     yaru-theme
     gnome-software
-    ubuntu-sans
     ubuntu-themes
     gnome-tweaks
+
+    ubuntu-sans
+    nerd-fonts.ubuntu-sans
   ];
 }
