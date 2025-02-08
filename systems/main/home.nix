@@ -1,41 +1,17 @@
 { config, pkgs, ... }:
 
 {
-  # TODO please change the username & home directory to your own
   home.username = "emi";
   home.homeDirectory = "/home/emi";
 
+  imports = [
+    ./modules/bash.nix
+    ./modules/code.nix
+    ./modules/theming.nix
+    ./modules/zip.nix
+  ];
+  
   home.packages = with pkgs; [
-    neofetch
-    hyfetch
-
-    # zips!
-    zip
-    xz
-    unzip
-    p7zip
-    ripgrep
-    eza
-    fzf
-
-    # networking tools
-    iperf3
-    dnsutils  # `dig` + `nslookup`
-    dnsmasq
-
-    nix-output-monitor
-    nil
-
-    btop
-    iotop
-    iftop
-    bat
-
-    sysstat
-    lm_sensors
-    ethtool
-    pciutils
-    usbutils
   ];
 
   # basic configuration of git, please change to your own

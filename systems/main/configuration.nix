@@ -75,6 +75,8 @@
   };
 
   services.flatpak.enable = true;
+
+  # Virtualization
   virtualisation = {
     libvirtd = {
       enable = true;
@@ -82,6 +84,7 @@
     };
   };
 
+  # Nix features and version
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.11";
 }

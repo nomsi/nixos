@@ -8,6 +8,8 @@
     eza
     fzf
     bat
+    vim
+    curl
   ];
 
   programs.starship = {
