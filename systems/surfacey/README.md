@@ -1,0 +1,1 @@
+It's just an older Surface Pro 7 
