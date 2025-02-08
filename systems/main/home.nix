@@ -14,6 +14,7 @@
 
   home.packages = with pkgs; [
     winetricks
+    xivlauncher
   ];
 
   # basic configuration of git, please change to your own
