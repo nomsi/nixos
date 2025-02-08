@@ -78,8 +78,8 @@
     noto-fonts-color-emoji
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.ubuntu-sans
+  fonts.packages = with pkgs.nerd-fonts; [
+    nerdfonts.ubuntu-sans
   ];
 
   # Extra System stuff
