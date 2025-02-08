@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nix-hardware, ... }: {
     nixosConfigurations = {
       nixy = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -28,6 +28,16 @@
         system = "x86_64-linux";
         modules = [
           ./systems/surfacey/configuration.nix
+          nixos-hardware.nixosModules.microsoft-surface-pro-intel
+          {
+            system.extraSystemBuilderCmds = ''
+              ln -s ${self} $out/flake
+              ln -s ${self.nixosConfigurations.papyrus.config.boot.kernelPackages.kernel.dev} $out/kernel-dev
+            '';
+          }
+          {
+            nix.registry.nixpkgs.flake = nixpkgs;
+          }
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
