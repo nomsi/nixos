@@ -1,5 +1,15 @@
 { config, pkgs, ... }:
 {
+
+  home.packages = with pkgs; [
+    neofetch
+    hyfetch
+    ripgrep
+    eza
+    fzf
+    bat
+  ];
+
   programs.starship = {
     enable = true;
     settings = pkgs.lib.importTOML ./configs/starship.toml;
