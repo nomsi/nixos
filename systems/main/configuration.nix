@@ -64,7 +64,6 @@
 
   environment.systemPackages = with pkgs; [
     wineWowPackages.stable
-    nerd-fonts.ubuntu-sans
   ];
 
   # Extra System stuff
