@@ -78,10 +78,6 @@
     noto-fonts-color-emoji
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.ubuntu-sans
-  ];
-
   # Extra System stuff
   programs.firefox.enable = true;
   programs.steam = {
