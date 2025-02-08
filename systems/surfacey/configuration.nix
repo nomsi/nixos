@@ -81,6 +81,14 @@
 
   config.microsoft-surface.surface-control.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Garbage Collection
+  gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }
