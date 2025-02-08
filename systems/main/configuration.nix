@@ -76,6 +76,8 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
+
+    virt-manager
   ];
 
   # Extra System stuff
@@ -88,14 +90,10 @@
   };
 
   services.flatpak.enable = true;
-
-  # Virtualization
-  virtualisation = {
-    libvirtd = {
-      enable = true;
-      qemu.omvf = true;
-    };
-  };
+  
+  # Virtualisation
+  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.qemu.ovmf.enable = true;
 
   # Nix features and version
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
