@@ -7,6 +7,5 @@
     gnome-tweaks
 
     ubuntu-sans
-    nerd-fonts.ubuntu-sans
   ];
 }
