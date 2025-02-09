@@ -10,6 +10,7 @@
     bat
     vim
     curl
+    tailscale
   ];
 
   programs.starship = {
