@@ -15,6 +15,8 @@
   home.packages = with pkgs; [
     winetricks
     libreoffice
+    qbittorrent
+    nordvpn
   ];
 
   # basic configuration of git, please change to your own
