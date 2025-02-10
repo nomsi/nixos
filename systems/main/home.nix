@@ -15,7 +15,7 @@
     winetricks
     libreoffice
     qbittorrent
-    mullvpad-vpn
+    mullvad-vpn
   ];
 
   # basic configuration of git, please change to your own
