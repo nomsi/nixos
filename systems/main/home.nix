@@ -5,7 +5,7 @@
     ./modules/bash.nix
     ./modules/code.nix
     ./modules/zip.nix
-
+    ./modules/nordvpn.nix
     inputs.spicetify-nix.homeManagerModules.default
   ];
 
@@ -16,7 +16,6 @@
     winetricks
     libreoffice
     qbittorrent
-    nordvpn
   ];
 
   # basic configuration of git, please change to your own
