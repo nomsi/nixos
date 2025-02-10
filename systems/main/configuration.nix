@@ -62,6 +62,10 @@
   # Packages
   nixpkgs.config.allowUnfree = true;
 
+  # Mullvad VPN
+  services.mullvad-vpn.enable = true;
+
+  # Global system package
   environment.systemPackages = with pkgs; [
     wineWowPackages.stable
 
