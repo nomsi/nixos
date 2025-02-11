@@ -81,6 +81,8 @@
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
 
+    sqlite
+
     virt-manager
   ];
 
