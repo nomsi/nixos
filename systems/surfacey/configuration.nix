@@ -77,9 +77,8 @@
     noto-fonts-color-emoji
   ];
 
-  microsoft-service.ipts.enable = true;
-
-  config.microsoft-surface.surface-control.enable = true;
+  virtualisation.waydroid.enable = true;
+  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Garbage Collection

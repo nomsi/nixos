@@ -98,6 +98,7 @@
   # Virtualisation
   virtualisation.libvirtd.enable = true;
   virtualisation.libvirtd.qemu.ovmf.enable = true;
+  virtualisation.waydroid.enable = true;
 
   # Garbage Collection
   nix.gc = {
