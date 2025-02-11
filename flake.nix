@@ -19,10 +19,17 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # NVChad4Nix
+    nvchad4nix = {
+      url = "github:nix-community/nix4nvchad";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, 
-                     nixos-hardware, spicetify-nix, rust-overlay, ... }: {
+                     nixos-hardware, spicetify-nix, rust-overlay,
+                     nvchad4nix, ... }: {
     nixosConfigurations = {
       nixy = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
