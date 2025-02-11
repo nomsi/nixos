@@ -45,6 +45,10 @@
         system = "x86_64-linux";
         modules = [
           ./systems/surfacey/configuration.nix
+          ({pkgs, ...}: {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+          })
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           {
             nix.registry.nixpkgs.flake = nixpkgs;
