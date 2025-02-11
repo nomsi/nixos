@@ -28,10 +28,6 @@
         system = "x86_64-linux";
         modules = [
           ./systems/main/configuration.nix
-          ({pkgs, ...}): {
-            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            environment.systemPackages = with pkgs; [ rust-bin.stable.latest.default ];
-          })
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -39,6 +35,10 @@
             home-manager.users.emi = import ./systems/main/home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
+          ({pkgs, ...}): {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+          })
         ];
       };
       surfacey = nixpkgs.lib.nixosSystem {
