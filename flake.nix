@@ -13,15 +13,25 @@
     # Spicetify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Rust
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, 
-                     nixos-hardware, spicetify-nix, ... }: {
+                     nixos-hardware, spicetify-nix, rust-overlay, ... }: {
     nixosConfigurations = {
       nixy = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./systems/main/configuration.nix
+          ({pkgs, ...}): {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = with pkgs; [ rust-bin.stable.latest.default ];
+          })
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
