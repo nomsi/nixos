@@ -6,6 +6,7 @@
     ./modules/code.nix
     ./modules/zip.nix
     inputs.spicetify-nix.homeManagerModules.default
+    inputs.nvchad4nix.homeManagerModule
   ];
 
   home.username = "emi";
@@ -25,6 +26,23 @@
     enable = true;
     userName = "Emi Jade";
     userEmail = "me@emi.lgbt";
+  };
+
+  programs.nvchad = {
+    enable = true;
+    extraPackages = with pkgs; [
+      nodePackages.bash-language-server
+      docker-compose-language-service
+      dockerfile-language-server-nodejs
+      nixd
+      fenix
+      (python3.withPackages(ps: with ps: [
+        python-lsp-server
+        flake8
+      ]))
+    ];
+    hm-activation = true;
+    backup = true;
   };
 
   programs.spicetify =
