@@ -86,6 +86,7 @@
     virt-manager
   ];
 
+
   # Extra System stuff
   programs.firefox.enable = true;
   programs.steam = {

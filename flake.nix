@@ -39,6 +39,14 @@
             nixpkgs.overlays = [ rust-overlay.overlays.default ];
             environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
           })
+          { nixpkgs = {
+              overlays = [
+                (final: prev: {
+                    nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
+                })
+              ];
+            };
+          }
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
