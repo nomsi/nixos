@@ -35,7 +35,7 @@
       docker-compose-language-service
       dockerfile-language-server-nodejs
       nixd
-      rust_analyzer
+      rust-analyzer
       (python3.withPackages(ps: with ps; [
         python-lsp-server
         flake8
