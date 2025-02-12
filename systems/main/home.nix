@@ -19,6 +19,8 @@
     vlc
     spotify-player
     browsh
+    nerd-fonts.ubuntu-sans
+    nerd-fonts.ubuntu-mono
 
     kdePackages.powerdevil
     kdePackages.kate
