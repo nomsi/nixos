@@ -34,9 +34,14 @@
   };
 
   # GNOME
+  # services.xserver.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+
+  # KDE
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # PipeWire
   security.rtkit.enable = true;
@@ -69,10 +74,7 @@
   environment.systemPackages = with pkgs; [
     wineWowPackages.stable
 
-    yaru-theme
-    gnome-software
-    ubuntu-themes
-    gnome-tweaks
+    kdePackages.discover
 
     ubuntu-sans
     noto-fonts
