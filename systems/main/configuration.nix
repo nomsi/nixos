@@ -83,6 +83,7 @@
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
 
+    wl-clipboard #Fixes clipboard in various apps
     sqlite
 
     virt-manager
