@@ -19,6 +19,12 @@
     vlc
     spotify-player
     browsh
+
+    kdePackages.powerdevil
+    kdePackages.kate
+    kdePackages.spectacle
+    kdePackages.poppler
+    kdePackages.plasmatube
   ];
 
   # basic configuration of git, please change to your own
