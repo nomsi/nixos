@@ -86,6 +86,7 @@
 
     wl-clipboard #Fixes clipboard in various apps
     sqlite
+    kdePackages.partitionmanager
 
     virt-manager
   ];
