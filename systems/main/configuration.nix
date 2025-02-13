@@ -67,6 +67,8 @@
     packages = with pkgs; [];
   };
 
+  users.groups.libvirtd.members = [ "emi" ];
+
   # Packages
   nixpkgs.config.allowUnfree = true;
 
@@ -92,6 +94,7 @@
     kdePackages.partitionmanager
 
     virt-manager
+    looking-glass-client
   ];
 
 
