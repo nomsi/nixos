@@ -43,6 +43,9 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  # Silly
+  services.xserver.desktopManager.cde.enable = true;
+
   # PipeWire
   security.rtkit.enable = true;
   services.pipewire = {
