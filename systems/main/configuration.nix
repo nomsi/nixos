@@ -141,8 +141,8 @@
     };
   
   # Virtualisation
-  virtualisation.libvirtd.enable = true;
-  virtualisation.libvirtd.qemu.ovmf.enable = true;
+  # virtualisation.libvirtd.enable = true;
+  # virtualisation.libvirtd.qemu.ovmf.enable = true;
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
