@@ -112,6 +112,31 @@
   };
 
   services.flatpak.enable = true;
+
+  # Samba service for VFIO (VIOFS didn't work for Windows 11)
+  services.samba = { 
+    enable = true;
+    securityType = "user";
+    openFirewall = true;
+    settings = {
+      "workground" = "WORKGROUP";
+      "server string" = "smbnix";
+      "netbios name" = "smbnix";
+      "security" = "user";
+      "hosts allow" = "192.168.0. 192.168.122. 127.0.0.1 localhost";
+      "guest account" = "nobody";
+      "map to guest" = "bad user";
+    };
+    "share" = {
+      "path" = "/home/emi/share";
+      "browsable" = "yes";
+      "read only" = "false";
+      "guest ok" = "no";
+      "create mask" = "0644";
+      "directory mask" = "0755";
+      "force user" = "emi";
+    };
+  };
   
   # Virtualisation
   virtualisation.libvirtd.enable = true;
