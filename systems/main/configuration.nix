@@ -42,7 +42,9 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
+  
+  # Optional Desktop Environments for testing
+  # services.xserver.desktopManager.xfce.enable = true;
 
   # PipeWire
   security.rtkit.enable = true;
@@ -90,12 +92,11 @@
     kdePackages.partitionmanager
 
     virt-manager
-
-    windowmaker #haha silly
   ];
 
 
   # Extra System stuff
+  programs.kdeconnect.enable = true;
   programs.firefox.enable = true;
   programs.steam = {
     enable = true;
