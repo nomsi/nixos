@@ -97,6 +97,7 @@
     looking-glass-client
     swtpm
     pciutils
+    virtiofsd
   ];
 
 
