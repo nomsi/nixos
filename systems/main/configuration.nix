@@ -155,8 +155,7 @@
           csmSupport = false;
           httpSupport = true;
           tpmSupport = true;
-          }).fd 
-        ];
+          }).fd ];
       };
     };
   };
