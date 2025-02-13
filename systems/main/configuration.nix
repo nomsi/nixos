@@ -143,6 +143,23 @@
   # Virtualisation
   virtualisation.libvirtd.enable = true;
   virtualisation.libvirtd.qemu.ovmf.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      runAsRoot = true;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        packages = (pkgs.OVMF.override {
+          secureBoot = true;
+          csmSupport = false;
+          httpSupport = true;
+          tpmSupport = true;
+          }).fd 
+        ];
+      };
+    };
+  };
   virtualisation.waydroid.enable = true;
 
   # Garbage Collection
