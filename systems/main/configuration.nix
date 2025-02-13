@@ -95,6 +95,7 @@
 
     virt-manager
     looking-glass-client
+    swtpm
   ];
 
 
