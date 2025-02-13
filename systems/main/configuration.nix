@@ -90,6 +90,8 @@
     kdePackages.partitionmanager
 
     virt-manager
+
+    windowmaker #haha silly
   ];
 
 
