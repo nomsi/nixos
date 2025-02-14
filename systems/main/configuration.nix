@@ -141,8 +141,6 @@
   };
   
   # Virtualisation
-  # virtualisation.libvirtd.enable = true;
-  # virtualisation.libvirtd.qemu.ovmf.enable = true;
 virtualisation.libvirtd = {
     enable = true;
     qemu = {
@@ -160,6 +158,7 @@ virtualisation.libvirtd = {
     };
   };
 
+  # Setup systemd rules for qemu
   systemd.tmpfiles.rules =
   let
     firmware =
