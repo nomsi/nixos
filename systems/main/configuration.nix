@@ -192,7 +192,7 @@
 
   # Net bridge
   networking = {
-    interfaces.enp5s0.useDHCP = true;
+    interfaces.eth0.useDHCP = true;
     interfaces.br0.useDHCP = true;
     bridges = {
       br0 = {
