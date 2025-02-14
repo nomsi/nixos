@@ -190,6 +190,17 @@
     options = "--delete-older-than 7d";
   };
 
+  # Net bridge
+  networking = {
+    interfaces.eth0.useDHCP = true;
+    interfaces.br0.useDHCP = true;
+    bridges = {
+      br0 = {
+        interfaces = [ "eth0" "virbr0" ];
+      };
+    };
+  };
+
   # Nix features and version
   nix.settings.experimental-features = [
     "nix-command"
