@@ -98,6 +98,8 @@
     swtpm
     pciutils
     virtiofsd
+
+    nixfmt-rfc-style
   ];
 
 
