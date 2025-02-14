@@ -153,7 +153,6 @@ virtualisation.libvirtd = {
         enable = true;
         packages = [ (pkgs.OVMF.override {
           secureBoot = true;
-          csmSupport = false;
           httpSupport = true;
           tpmSupport = true;
         }).fd ];
