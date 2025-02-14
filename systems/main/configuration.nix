@@ -164,6 +164,14 @@
     };
   };
 
+  # Printing
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   # Setup systemd rules for qemu
   systemd.tmpfiles.rules =
     let
