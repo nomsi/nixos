@@ -118,9 +118,9 @@
   services.flatpak.enable = true;
 
   # Samba service for VFIO (VIOFS didn't work for Windows 11)
+  ## services.samba.settings.global.security
   services.samba = {
     enable = true;
-    securityType = "user";
     openFirewall = true;
     settings = {
       global = {
