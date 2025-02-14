@@ -183,14 +183,6 @@
     in
     [ "L+ /var/lib/qemu/firmware - - - - ${firmware}" ];
 
-  networking.interfaces.eth0.useDHCP = true;
-  networking.interfaces.br0.useDHCP = true;
-  networking.bridges = {
-    "enp5s0" = {
-      interfaces = [ "virbr0" ];
-    };
-  };
-
   # Garbage Collection
   nix.gc = {
     automatic = true;
