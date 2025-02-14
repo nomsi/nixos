@@ -119,26 +119,26 @@
     securityType = "user";
     openFirewall = true;
     settings = {
-        global = {
-          "workground" = "WORKGROUP";
-          "server string" = "smbnix";
-          "netbios name" = "smbnix";
-          "security" = "user";
-          "hosts allow" = "192.168.0. 192.168.122. 127.0.0.1 localhost";
-          "guest account" = "nobody";
-          "map to guest" = "bad user";
-        };
-        "private" = {
-          "path" = "/home/emi/share";
-          "browsable" = "yes";
-          "read only" = "false";
-          "guest ok" = "no";
-          "create mask" = "0644";
-          "directory mask" = "0755";
-          "force user" = "emi";
-        };
+      global = {
+        "workground" = "WORKGROUP";
+        "server string" = "smbnix";
+        "netbios name" = "smbnix";
+        "security" = "user";
+        "hosts allow" = "192.168.0. 192.168.122. 127.0.0.1 localhost";
+        "guest account" = "nobody";
+        "map to guest" = "bad user";
+      };
+      "private" = {
+        "path" = "/home/emi/share";
+        "browsable" = "yes";
+        "read only" = "false";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "emi";
       };
     };
+  };
   
   # Virtualisation
   # virtualisation.libvirtd.enable = true;
