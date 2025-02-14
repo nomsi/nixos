@@ -193,12 +193,12 @@
   # Net bridge
   networking = {
     interfaces.enp5s0.useDHCP = true;
-    interfaces.virbr0.useDHCP = true;
+    interfaces.br0.useDHCP = true;
     bridges = {
       virbr0 = {
         interfaces = [ 
           "enp5s0" 
-          "virbr0" 
+          "br0" 
         ];
       };
     };
