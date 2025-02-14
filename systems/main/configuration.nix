@@ -186,8 +186,8 @@
   networking.interfaces.eth0.useDHCP = true;
   networking.interfaces.br0.useDHCP = true;
   networking.bridges = {
-    "virbr0" = {
-      interfaces = [ "enp5s0" ];
+    "enp5s0" = {
+      interfaces = [ "virbr0" ];
     };
   };
 
