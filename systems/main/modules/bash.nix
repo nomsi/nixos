@@ -19,7 +19,6 @@
     settings = pkgs.lib.importTOML ./configs/starship.toml;
   };
 
-
   programs.bash = {
     enable = true;
     enableCompletion = true;

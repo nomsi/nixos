@@ -5,11 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./boot.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./boot.nix
+  ];
 
   # Defaults?
   networking.hostName = "nixy"; # Define your hostname.
@@ -42,7 +42,7 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  
+
   # Optional Desktop Environments for testing
   # services.xserver.desktopManager.xfce.enable = true;
 
@@ -63,8 +63,11 @@
   users.users.emi = {
     isNormalUser = true;
     description = "Emi Madison Jade-Steele";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   users.groups.libvirtd.members = [ "emi" ];
@@ -89,7 +92,7 @@
     noto-fonts-color-emoji
     nerd-fonts.ubuntu-sans
 
-    wl-clipboard #Fixes clipboard in various apps
+    wl-clipboard # Fixes clipboard in various apps
     sqlite
     kdePackages.partitionmanager
 
@@ -101,7 +104,6 @@
 
     nixfmt-rfc-style
   ];
-
 
   # Extra System stuff
   programs.kdeconnect.enable = true;
@@ -116,7 +118,7 @@
   services.flatpak.enable = true;
 
   # Samba service for VFIO (VIOFS didn't work for Windows 11)
-  services.samba = { 
+  services.samba = {
     enable = true;
     securityType = "user";
     openFirewall = true;
@@ -141,9 +143,9 @@
       };
     };
   };
-  
+
   # Virtualisation
-virtualisation.libvirtd = {
+  virtualisation.libvirtd = {
     enable = true;
     qemu = {
       package = pkgs.qemu_kvm;
@@ -151,26 +153,27 @@ virtualisation.libvirtd = {
       swtpm.enable = true;
       ovmf = {
         enable = true;
-        packages = [ (pkgs.OVMF.override {
-          secureBoot = true;
-          httpSupport = true;
-          tpmSupport = true;
-        }).fd ];
+        packages = [
+          (pkgs.OVMF.override {
+            secureBoot = true;
+            httpSupport = true;
+            tpmSupport = true;
+          }).fd
+        ];
       };
     };
   };
 
   # Setup systemd rules for qemu
   systemd.tmpfiles.rules =
-  let
-    firmware =
-      pkgs.runCommandLocal "qemu-firmware" { } ''
+    let
+      firmware = pkgs.runCommandLocal "qemu-firmware" { } ''
         mkdir $out
         cp ${pkgs.qemu}/share/qemu/firmware/*.json $out
         substituteInPlace $out/*.json --replace ${pkgs.qemu} /run/current-system/sw
       '';
-  in
-  [ "L+ /var/lib/qemu/firmware - - - - ${firmware}" ];
+    in
+    [ "L+ /var/lib/qemu/firmware - - - - ${firmware}" ];
 
   # Garbage Collection
   nix.gc = {
@@ -180,6 +183,9 @@ virtualisation.libvirtd = {
   };
 
   # Nix features and version
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   system.stateVersion = "24.11";
 }

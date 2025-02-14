@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -44,23 +49,25 @@
       dockerfile-language-server-nodejs
       nixd
       rust-analyzer
-      (python3.withPackages(ps: with ps; [
-        python-lsp-server
-        flake8
-      ]))
+      (python3.withPackages (
+        ps: with ps; [
+          python-lsp-server
+          flake8
+        ]
+      ))
     ];
     hm-activation = true;
     backup = true;
   };
 
   programs.spicetify =
-  let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-  in
-  {
-    enable = true;
-    theme = spicePkgs.themes.catppuccin;
-  };
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in
+    {
+      enable = true;
+      theme = spicePkgs.themes.catppuccin;
+    };
 
   home.stateVersion = "24.11";
 

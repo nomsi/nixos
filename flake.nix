@@ -27,56 +27,72 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, 
-                     nixos-hardware, spicetify-nix, rust-overlay,
-                     nvchad4nix, ... }: {               
-    nixosConfigurations = {
-      nixy = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./systems/main/configuration.nix
-          ({pkgs, ...}: {
-            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-          })
-          { nixpkgs = {
-              overlays = [
-                (final: prev: {
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      nixos-hardware,
+      spicetify-nix,
+      rust-overlay,
+      nvchad4nix,
+      ...
+    }:
+    {
+      nixosConfigurations = {
+        nixy = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./systems/main/configuration.nix
+            (
+              { pkgs, ... }:
+              {
+                nixpkgs.overlays = [ rust-overlay.overlays.default ];
+                environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+              }
+            )
+            {
+              nixpkgs = {
+                overlays = [
+                  (final: prev: {
                     nvchad = inputs.nvchad4nix.packages."${nixpkgs.pkgs.system}".nvchad;
-                })
-              ];
-            };
-          }
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.emi = import ./systems/main/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
-        ];
-      };
-      surfacey = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./systems/surfacey/configuration.nix
-          ({pkgs, ...}: {
-            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-          })
-          nixos-hardware.nixosModules.microsoft-surface-pro-intel
-          {
-            nix.registry.nixpkgs.flake = nixpkgs;
-          }
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.emi = import ./systems/surfacey/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
-        ];
+                  })
+                ];
+              };
+            }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.emi = import ./systems/main/home.nix;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+            }
+          ];
+        };
+        surfacey = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./systems/surfacey/configuration.nix
+            (
+              { pkgs, ... }:
+              {
+                nixpkgs.overlays = [ rust-overlay.overlays.default ];
+                environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+              }
+            )
+            nixos-hardware.nixosModules.microsoft-surface-pro-intel
+            {
+              nix.registry.nixpkgs.flake = nixpkgs;
+            }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.emi = import ./systems/surfacey/home.nix;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+            }
+          ];
+        };
       };
     };
-  };
 }
