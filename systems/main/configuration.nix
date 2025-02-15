@@ -101,6 +101,7 @@
     swtpm
     pciutils
     virtiofsd
+    lutris
 
     nixfmt-rfc-style
   ];
