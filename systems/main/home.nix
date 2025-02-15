@@ -18,6 +18,7 @@
   home.homeDirectory = "/home/emi";
 
   home.packages = with pkgs; [
+    ckb-next
     winetricks
     libreoffice
     qbittorrent
