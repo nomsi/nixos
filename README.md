@@ -1,5 +1,5 @@
 
-
+(Temporarily shutdown until I get a ram upgrade, will keep the dream live of VFIO!)
 
 ### Personal nix config
 Usually I upload to my private git but I should keep my nixos configuration adventure archived publicly.
